@@ -1,4 +1,3 @@
-
 services:
   - type: web
     name: ytfollow-api
@@ -6,7 +5,9 @@ services:
     buildCommand: ""
     startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
     plan: free
+    autoDeploy: true
     envVars:
       - key: PYTHON_VERSION
         value: 3.11
-    autoDeploy: true
+      - key: PORT
+        value: 10000
